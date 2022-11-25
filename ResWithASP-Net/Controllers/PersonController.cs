@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ResWithASP_Net.Model;
+using ResWithASP_Net.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +11,64 @@ namespace ResWithASP_Net.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CalculatorController : ControllerBase
+    public class PersonController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<CalculatorController> _logger;
+        private readonly ILogger<PersonController> _logger;
+        private readonly IPersonService _personService;
 
-        public CalculatorController(ILogger<CalculatorController> logger)
+        public PersonController(ILogger<PersonController> logger, IPersonService personService)
         {
             _logger = logger;
+            _personService = personService;
         }
 
-        [HttpGet("sum/{firstNumber}/{secondNumber}")]
-        public IActionResult Sum(string firstNumber, string secondNumber)
+        #region Métodos Pessoa
+
+        [HttpGet]
+        public IActionResult Get()
         {
-            if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
-            {
-                var sum = ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber);
-                return Ok(sum.ToString());
-            }
-            return BadRequest("Invalid Input");
+            return Ok(_personService.FindAll());
         }
 
-        [HttpGet("subtracao/{firstNumber}/{secondNumber}")]
+        [HttpGet("{id}")]
+        public IActionResult Get(long id)
+        {
+            var person = _personService.FindById(id);
+            if (person == null) return NotFound();
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Person person)
+        {
+            if (person == null) return BadRequest();
+            return Ok(_personService.Create(person));
+        }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] Person person)
+        {
+            if (person == null) return BadRequest();
+            return Ok(_personService.Update(person));
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(long id)
+        {
+            _personService.Delete(id);
+            return NoContent();
+        }
+
+        #endregion
+
+        #region Operações Matemáticas
+
+        /*[HttpGet("subtracao/{firstNumber}/{secondNumber}")]
         public IActionResult Subtracao(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
@@ -78,13 +112,12 @@ namespace ResWithASP_Net.Controllers
             return BadRequest("Invalid Input");
         }
 
-        [HttpGet("raiz/{firstNumber}/{secondNumber}")]
-        public IActionResult Raiz(string firstNumber, string secondNumber)
+        [HttpGet("raiz/{firstNumber}")]
+        public IActionResult Raiz(string firstNumber)
         {
-            if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
+            if (IsNumeric(firstNumber))
             {
-                var result = ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber);
-                var resultado = Math.Sqrt(Convert.ToDouble(result));
+                var resultado = Math.Sqrt(Convert.ToDouble(firstNumber));
                 return Ok(resultado.ToString());
             }
             return BadRequest("Invalid Input");
@@ -105,6 +138,8 @@ namespace ResWithASP_Net.Controllers
             double number;
             bool isNumber = double.TryParse(strNumber, System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out number);
             return isNumber;
-        }
+        }*/
+
+        #endregion
     }
 }
