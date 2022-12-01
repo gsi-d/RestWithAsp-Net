@@ -30,7 +30,16 @@ C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\ResWithASP-Net.dll
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\ref\ResWithASP-Net.dll
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\ResWithASP-Net.pdb
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\bin\Debug\net5.0\Pomelo.JsonObject.dll
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.csproj.AssemblyReference.cache
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP_Net.Properties.Resources.resources
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.csproj.GenerateResource.cache
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.AssemblyInfoInputs.cache
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.AssemblyInfo.cs
@@ -40,6 +49,7 @@ C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\staticwebassets\ResWithASP-Net.StaticWebAssets.xml
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\scopedcss\bundle\ResWithASP-Net.styles.css
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.RazorTargetAssemblyInfo.cache
+C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.csproj.CopyComplete
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.dll
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ref\ResWithASP-Net.dll
 C:\Users\vlnote51\Desktop\Guilherme\ProjetosPessoais\RestWithAsp-Net\ResWithASP-Net\obj\Debug\net5.0\ResWithASP-Net.pdb

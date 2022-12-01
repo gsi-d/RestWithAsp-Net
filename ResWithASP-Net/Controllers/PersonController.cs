@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ResWithASP_Net.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PersonController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
