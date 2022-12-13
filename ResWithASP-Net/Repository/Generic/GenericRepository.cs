@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ResWithASP_Net.Model;
 using ResWithASP_Net.Model.Base;
 using ResWithASP_Net.Model.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ResWithASP_Net.Repository.Generic
 {

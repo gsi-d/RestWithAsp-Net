@@ -1,23 +1,20 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Net.Http.Headers;
 using ResWithASP_Net.Business;
 using ResWithASP_Net.Business.Implementations;
+using ResWithASP_Net.HyperMedia.Enricher;
+using ResWithASP_Net.HyperMedia.Filters;
 using ResWithASP_Net.Model.Context;
 using ResWithASP_Net.Repository;
 using ResWithASP_Net.Repository.Generic;
 using Serilog;
-using Serilog.Core;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ResWithASP_Net
 {
@@ -46,6 +43,19 @@ namespace ResWithASP_Net
                 MigrateDataBase(connection);
             }
 
+            //Aceitando formato XML e JSON
+            services.AddMvc(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml"));
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json"));
+            }).AddXmlSerializerFormatters();
+
+            var filterOptions = new HyperMediaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+
+            services.AddSingleton(filterOptions);
+
             //Versioning API
             services.AddApiVersioning();
 
@@ -73,6 +83,7 @@ namespace ResWithASP_Net
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
             });
         }
         private void MigrateDataBase(string connection)

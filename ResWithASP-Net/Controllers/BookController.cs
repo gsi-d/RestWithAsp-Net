@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ResWithASP_Net.Business;
+using ResWithASP_Net.Data.VO;
+using ResWithASP_Net.HyperMedia.Filters;
 using ResWithASP_Net.Model;
 using System;
 using System.Collections.Generic;
@@ -31,12 +33,14 @@ namespace ResWithASP_Net.Controllers
         #region Métodos Book
 
         [HttpGet]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get()
         {
             return Ok(_bookBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(long id)
         {
             var person = _bookBusiness.FindById(id);
@@ -45,20 +49,23 @@ namespace ResWithASP_Net.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Create(book));
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Book book)
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Put([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Update(book));
         }
 
         [HttpDelete("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Delete(long id)
         {
             _bookBusiness.Delete(id);
