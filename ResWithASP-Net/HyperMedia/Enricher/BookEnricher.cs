@@ -40,7 +40,7 @@ namespace ResWithASP_Net.HyperMedia.Enricher
             });
             content.Links.Add(new HyperMediaLink()
             {
-                Action = HttpActionVerb.PATCH,
+                Action = HttpActionVerb.PATCH, 
                 Href = link,
                 Rel = RelationType.self,
                 Type = ResponseTypeFormat.DefaultPatch

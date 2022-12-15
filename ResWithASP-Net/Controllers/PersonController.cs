@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using ResWithASP_Net.Business;
 using ResWithASP_Net.Data.VO;
 using ResWithASP_Net.HyperMedia.Filters;
+using System.Collections.Generic;
 
 namespace ResWithASP_Net.Controllers
 {
@@ -35,6 +36,10 @@ namespace ResWithASP_Net.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(long id)
         {
@@ -44,6 +49,9 @@ namespace ResWithASP_Net.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Post([FromBody] PersonVO person)
         {
@@ -52,6 +60,9 @@ namespace ResWithASP_Net.Controllers
         }
 
         [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Put([FromBody] PersonVO person)
         {
@@ -60,6 +71,9 @@ namespace ResWithASP_Net.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Delete(long id)
         {
